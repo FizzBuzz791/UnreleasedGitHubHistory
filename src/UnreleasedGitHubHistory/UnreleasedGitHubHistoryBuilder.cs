@@ -53,7 +53,14 @@ namespace UnreleasedGitHubHistory
                             Console.WriteLine($"Found #{pullRequest.Number}: {pullRequest.Title}: {mergeCommit.Sha}");
                         var pullRequestDto = GetPullRequestWithLabels(programArgs, pullRequest, gitHubClient);
                         if (pullRequestDto != null)
-                            releaseHistory.Add(pullRequestDto);
+                        {
+                            if (pullRequestDto.Labels.Contains("Feature Branch"))
+                            {
+                                // TODO: Get pull requests.
+                            }
+                            else
+                                releaseHistory.Add(pullRequestDto);
+                        }
                     }
                     return releaseHistory;
                 }
