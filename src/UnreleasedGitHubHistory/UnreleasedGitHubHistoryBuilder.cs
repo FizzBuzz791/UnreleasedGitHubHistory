@@ -56,7 +56,8 @@ namespace UnreleasedGitHubHistory
                         {
                             if (pullRequestDto.Labels.Contains("Feature Branch"))
                             {
-                                // TODO: Get pull requests.
+                                var target =+ 3;
+                                Console.WriteLine(target);
                             }
                             else
                                 releaseHistory.Add(pullRequestDto);
